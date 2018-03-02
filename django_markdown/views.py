@@ -20,7 +20,7 @@ def preview(request):
     if request.POST:
         content = request.POST.get('data', 'No content posted')
     else:
-        content = request.REQUEST.get('data', 'No content posted')
+        content = request.GET.get('data', 'No content posted')
 
     return render(
         request, settings.MARKDOWN_PREVIEW_TEMPLATE, dict(
