@@ -47,4 +47,4 @@ def editor_js_initialization(selector, **extra_settings):
     ctx = Context(dict(
         selector=selector, extra_settings=simplejson.dumps(options)),
         autoescape=False)
-    return INIT_TEMPLATE.render(ctx)
+    return INIT_TEMPLATE.template.render(ctx)
