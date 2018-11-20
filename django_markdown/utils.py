@@ -1,5 +1,8 @@
 """ Markdown utils. """
-from django.core.urlresolvers import reverse
+try:
+    from django.core.urlresolvers import reverse
+except ImportError:
+    from django.urls import reverse
 import markdown as markdown_module
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe

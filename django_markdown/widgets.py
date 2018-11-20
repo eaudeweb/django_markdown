@@ -33,6 +33,10 @@ class MarkdownWidget(forms.Textarea):
         :returns: A rendered HTML
 
         """
+        if attrs is None:
+            attrs = {}
+        attrs.update(self.attrs)
+
         html = super(MarkdownWidget, self).render(name, value, attrs)
         attrs = self.build_attrs(attrs)
         html += editor_js_initialization("#%s" % attrs['id'])
